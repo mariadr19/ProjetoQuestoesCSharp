@@ -11,32 +11,101 @@ namespace ProjetoQuestoesCSharp
     {
         // 76. Crie um jogo de "Adivinhe o Número" entre 1 e 100, dando dicas se o valor é maior ou menor.
         public static void questao76()
+        {
+            Random random = new Random();
+            int num = random.Next(1, 101);
+            int palpt = 0;
+            int tent = 0;
+
+            while (palpt != num)
             {
-                
+                Console.Write("Digite um número entre 1 e 100: ");
+                palpt = int.Parse(Console.ReadLine());
+                tent++;
+
+                if (palpt < num)
+                {
+                    Console.WriteLine("O número é maior.");
+                }
+                else if (palpt > num)
+                {
+                    Console.WriteLine("O número é menor.");
+                }
+                else
+                {
+                    Console.WriteLine($"Parabéns! Você acertou o número em {tent} tentativas.");
+                }
             }
+
+        }
 
         // 77. Implemente uma função que verifica se dois arrays possuem os mesmos elementos, independentemente da ordem.
         public static void questao77()
         {
-            
+
+            int[] array1 = { 1, 2, 3, 4, 5 };
+            int[] array2 = { 5, 4, 3, 2, 1 };
+
+            bool iguais = array1.Length == array2.Length && !array1.Except(array2).Any();
+
+            if (iguais)
+            {
+                Console.WriteLine("Os arrays são iguais.");
+            }
+            else
+            {
+                Console.WriteLine("Os arrays são diferentes.");
+            }
         }
 
         // 78. Crie uma função que simula uma fila de atendimento (FIFO) usando List<T>.
         public static void questao78()
         {
-            
+            Queue<string> fila = new Queue<string>();
+            fila.Enqueue("Cliente 1");
+            fila.Enqueue("Cliente 2");
+            fila.Enqueue("Cliente 3");
+
+            Console.WriteLine("Atendendo clientes:");
+            while (fila.Count > 0)
+            {
+                string cliente = fila.Dequeue();
+                Console.WriteLine($"Atendendo {cliente}...");
+            }
         }
 
         // 79. Desenvolva um jogo simples de "Pedra, Papel e Tesoura" que joga contra o computador.
         public static void questao79()
         {
-            
+            Random random = new Random();
+            string[] opcoes = { "Pedra", "Papel", "Tesoura" };
+
+            Console.Write("Escolha (Pedra, Papel ou Tesoura): ");
+            string escolhaUsuario = Console.ReadLine();
+            string escolhaComputador = opcoes[random.Next(0, 3)];
+
+            Console.WriteLine($"O computador escolheu: {escolhaComputador}");
+
+            if (escolhaUsuario == escolhaComputador)
+            {
+                Console.WriteLine("Empate!");
+            }
+            else if ((escolhaUsuario == "Pedra" && escolhaComputador == "Tesoura") ||
+                     (escolhaUsuario == "Papel" && escolhaComputador == "Pedra") ||
+                     (escolhaUsuario == "Tesoura" && escolhaComputador == "Papel"))
+            {
+                Console.WriteLine("Você ganhou!");
+            }
+            else
+            {
+                Console.WriteLine("Você perdeu!");
+            }
         }
 
         // 80. Crie um programa que calcula a soma dos dígitos de um número fornecido pelo usuário.
         public static void questao80()
         {
-            
+
         }
 
         // 81. Implemente uma função que encontra e exibe os números pares em uma lista.
@@ -58,14 +127,14 @@ namespace ProjetoQuestoesCSharp
         public static void questao82()
         {
             Console.WriteLine();
-            
+
         }
 
         // 83. Crie um programa que armazena 10 nomes e os exibe em ordem alfabética.
         public static void questao83()
         {
             List<string> nomes = new List<string>();
-            
+
             for (int i = 1; i <= 10; i++)
             {
                 Console.Write($"Digite o {i}° nome: ");
@@ -83,19 +152,19 @@ namespace ProjetoQuestoesCSharp
         // 84. Implemente uma função que verifica se uma string é um palíndromo (lida da mesma forma ao contrário).
         public static void questao84()
         {
-            
+
         }
 
         // 85. Crie um programa que gere 10 números aleatórios entre 1 e 50 e exiba o menor e o maior.
         public static void questao85()
         {
-            
+
         }
 
         //Implementação da classe da questão 86
         public class ContaBancaria
         {
-                       
+
         }
         // 86. Desenvolva uma classe ContaBancaria com métodos para depósito e saque e exiba o saldo após cada operação.
         public static void questao86()
@@ -149,13 +218,13 @@ namespace ProjetoQuestoesCSharp
         // 90. Implemente uma função que soma todos os elementos de uma matriz 2x2.
         public static void questao90()
         {
-            
+
         }
 
         // 91. Crie um programa que simula uma votação com três candidatos e exibe o vencedor ao final.
         public static void questao91()
         {
-            
+
         }
 
         // 92. Desenvolva um programa que verifica se um número fornecido é múltiplo de 3 e 7 ao mesmo tempo.
@@ -192,7 +261,7 @@ namespace ProjetoQuestoesCSharp
         // 93. Implemente um programa que calcula a distância entre dois pontos no plano cartesiano (fórmula da distância).
         public static void questao93()
         {
-            
+
         }
 
         // 94. Crie uma função que gera uma lista de 5 números aleatórios e os exibe em ordem crescente.
@@ -258,36 +327,40 @@ namespace ProjetoQuestoesCSharp
             a.Add(agenda);
 
             bool sair = false;
-            while (!false)
+
+            while (!sair)
             {
-                Console.WriteLine("\nDeseja adicionar um novo contato? (s/n)");
-                Console.WriteLine("Deseja ver a lista de contatos? 1-Sim  2-Não");
+                Console.WriteLine("\nEscolha uma opção:");
+                Console.WriteLine("1 - Adicionar um novo contato");
+                Console.WriteLine("2 - Ver lista de contatos");
+                Console.WriteLine("3 - Sair");
 
                 string opcao = Console.ReadLine();
+
                 switch (opcao)
                 {
-                    case "s":
+                    case "1":
                         Console.Clear();
                         NovoCTT();
                         break;
-                    case "n":
-                        sair = false;
-                        break;
-                    case "1":
+                    case "2":
                         Console.Clear();
                         exibirAgenda();
                         break;
-                    case "2":
-                        sair=false;
+                    case "3":
+                        sair = true;
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida. Tente novamente.");
                         break;
                 }
             }
         }
 
-        // 96. Implemente uma função que exibe todos os números primos entre 1 e 100.
-        public static void questao96()
+            // 96. Implemente uma função que exibe todos os números primos entre 1 e 100.
+            public static void questao96()
         {
-            
+
         }
 
         // 97. Crie um programa que recebe um número e exibe sua tabuada de multiplicação até 10.
@@ -306,7 +379,7 @@ namespace ProjetoQuestoesCSharp
         // 98. Desenvolva uma função que retorna o maior número em uma matriz 3x3.
         public static void questao98()
         {
-            
+
         }
 
         // 99. Implemente um programa que calcula a soma dos quadrados dos números de 1 a N.
@@ -327,9 +400,7 @@ namespace ProjetoQuestoesCSharp
         // 100. Crie um jogo simples de "Forca" onde o usuário tenta adivinhar uma palavra em até 5 tentativas.
         public static void questao100()
         {
-            
+
         }
     }
 }
-
-

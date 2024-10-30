@@ -220,16 +220,43 @@ namespace ProjetoQuestoesCSharp
         // Questão 38: Retornar o índice do maior elemento de um array
         public static void questao38()
         {
+            List<int> list = new List<int>();
+            Console.Write("Digite quantos números deseja inserir: ");
+            int num = int.Parse(Console.ReadLine());
             
+            for (int i = 1; i <= num; i++)
+            {
+                Console.Write($"Adicione o {i}° número: ");
+                int num1 = int.Parse(Console.ReadLine());
+                list.Add(num1);
+                
+            }
+            list.Sort();
+            list.Reverse();
+            int maior = list.Find(c => c > 0);
+            Console.WriteLine($"\nO index do número {maior} é {num-1}");
         }
 
         // Questão 39: Calcular o MDC entre dois números
         public static void questao39()
         {
-            Console.Write("Digite o primeiro número: ");
-            int num1 = int.Parse(Console.ReadLine());
-            Console.Write("Digite o segundo número");
-            int num2 = int.Parse(Console.ReadLine());
+            Console.Write("\nDigite o primeiro número: ");
+            int x = int.Parse(Console.ReadLine());
+            Console.Write("Informe o primeiro número: ");
+            int y = int.Parse(Console.ReadLine());
+            Console.WriteLine($"\nO Máximo Divisor Comum de {x} e  {y}  é  {MDC(x, y)}");
+        }
+        public static int MDC(int a, int b)
+        {
+            int resto;
+
+            while (b != 0)
+            {
+                resto = a % b;
+                a = b;
+                b = resto;
+            }
+            return a;
         }
 
         // Questão 40: Retornar o número de vogais em uma string
@@ -252,7 +279,11 @@ namespace ProjetoQuestoesCSharp
         // Questão 41: Converter um número decimal para binário
         public static void questao41()
         {
-            
+            Console.Write("\nDigite o número que deseja converter: ");
+            int num = int.Parse(Console.ReadLine());
+            string numBin = Convert.ToString(num, 2);
+
+            Console.WriteLine($"\nNúmero {num} em binário é: {numBin} ");
         }
 
 
@@ -383,18 +414,82 @@ namespace ProjetoQuestoesCSharp
         // Função que soma duas matrizes 2x2
         public static void questao47()
         {
+            int[,] matriz1 = new int[2, 2];
+            int[,] matriz2 = new int[2, 2];
+            int[,] resultado = new int[2, 2];
 
+            Console.WriteLine("Digite os elementos da primeira matriz 2x2:");
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    Console.Write($"Elemento [{i},{j}]: ");
+                    matriz1[i, j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            Console.WriteLine("Digite os elementos da segunda matriz 2x2:");
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    Console.Write($"Elemento [{i},{j}]: ");
+                    matriz2[i, j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    resultado[i, j] = matriz1[i, j] + matriz2[i, j];
+                }
+            }
+
+            Console.WriteLine("Resultado da soma das matrizes:");
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    Console.Write(resultado[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
         }
 
         // Função que recebe uma data e exibe o dia da semana correspondente.
-        public static void questao48() 
+        public static void questao48()
         {
-            
+            Console.Write("\nDigite o dia: ");
+            int dia = int.Parse(Console.ReadLine());
+            Console.Write("\nDigite o mês: ");
+            int mes = int.Parse(Console.ReadLine());
+            Console.Write("\nDigite o ano: ");
+            int ano = int.Parse(Console.ReadLine());
+            DateTime data = new DateTime(ano,mes,dia);
+            string diaSemana = diaDaSemana(data);
+            Console.WriteLine($"\nO dia da semana para {data.ToShortDateString()} é {diaSemana}.");
+        }
+        public static string diaDaSemana(DateTime data)
+        {
+            return data.ToString("dddd");
         }
 
         // Verificar se uma string contém apenas letras e números
         public static void questao49()
         {
+            Console.Write("Digite uma palavra: ");
+            string palavra = Console.ReadLine();
+            bool apenasLetrasNumeros = palavra.All(char.IsLetterOrDigit);
+
+            if (apenasLetrasNumeros)
+            {
+                Console.WriteLine("A string contém apenas letras e números.");
+            }
+            else
+            {
+                Console.WriteLine("A string contém caracteres não permitidos.");
+            }
 
         }
 

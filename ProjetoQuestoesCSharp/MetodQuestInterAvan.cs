@@ -149,12 +149,7 @@ namespace ProjetoQuestoesCSharp
         // Exibe uma mensagem personalizada com o método Falar() da classe Pessoa
         public static void questao58()
         {
-        }
-
-        // Retorna a interseção entre dois arrays
-        public static void questao59()
-        {
-            Pessoa pessoa = new Pessoa();
+             Pessoa pessoa = new Pessoa();
             pessoa.Falar();
         }
         public class Pessoa
@@ -164,6 +159,13 @@ namespace ProjetoQuestoesCSharp
                 Console.WriteLine("Olá! Eu sou Maria do Rosário.");
             }
         }
+
+        // Retorna a interseção entre dois arrays
+        public static void questao59()
+        {
+           
+        }
+        
         // Converte uma string para maiúsculas e minúsculas alternadas
         public static void questao60()
         {

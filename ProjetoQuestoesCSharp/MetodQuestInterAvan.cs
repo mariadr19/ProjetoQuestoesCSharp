@@ -2,15 +2,44 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ProjetoQuestoesCSharp
 {
-    internal class MetodQuestInterAvan
+    public class MetodQuestInterAvan
     {
         // Verifica se uma matriz é simétrica
         public static void questao51()
         {
+            Console.Write("\nDigite o tamanho da matriz quadrada (ex: 3 para 3x3): ");
+            int n = int.Parse(Console.ReadLine());
+            int[,] matriz = new int[n, n];
+
+            Console.WriteLine("Digite os elementos da matriz:");
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write($"Elemento [{i},{j}]: ");
+                    matriz[i, j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            bool simetrica = true;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (matriz[i, j] != matriz[j, i])
+                    {
+                        simetrica = false;
+                        break;
+                    }
+                }
+            }
+
+            Console.WriteLine(simetrica ? "A matriz é simétrica." : "A matriz não é simétrica.");
         }
 
         // Ordena uma lista de nomes em ordem alfabética
@@ -39,27 +68,82 @@ namespace ProjetoQuestoesCSharp
         // Encontra o elemento mais frequente em um array
         public static void questao53()
         {
+            Console.WriteLine("\nDigite o número de elementos no array:");
+            int n = int.Parse(Console.ReadLine());
+            int[] array = new int[n];
+            Console.WriteLine("Digite os elementos do array:");
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = int.Parse(Console.ReadLine());
+            }
 
+            int maisFrequente = array.GroupBy(x => x).OrderByDescending(g => g.Count()).Select(g => g.Key).FirstOrDefault();
+            int frequencia = array.Count(x => x == maisFrequente);
+
+            Console.WriteLine($"O elemento mais frequente é {maisFrequente}, que aparece {frequencia} vezes.");
         }
+    
+
 
         // Calcula o valor absoluto de um número sem usar Math.Abs()
         public static void questao54()
         {
+            Console.Write("\nDigite um número: ");
+            int numero = int.Parse(Console.ReadLine());
+            int absoluto = numero < 0 ? -numero : numero;
+            Console.WriteLine($"O valor absoluto é {absoluto}");
         }
 
         // Implementa o algoritmo de busca linear
         public static void questao55()
         {
+            Console.WriteLine("\nDigite o número de elementos no array:");
+            int n = int.Parse(Console.ReadLine());
+            int[] array = new int[n];
+            Console.WriteLine("Digite os elementos do array:");
+            for (int i = 0; i < n; i++)
+            {
+                array[i] = int.Parse(Console.ReadLine());
+            }
+            Console.Write("\nDigite o número a ser buscado: ");
+            int busca = int.Parse(Console.ReadLine());
+
+            bool encontrado = false;
+            for (int i = 0; i < n; i++)
+            {
+                if (array[i] == busca)
+                {
+                    Console.WriteLine($"Número {busca} encontrado na posição {i}");
+                    encontrado = true;
+                    break;
+                }
+            }
+
+            if (!encontrado)
+            {
+                Console.WriteLine("Número não encontrado.");
+            }
         }
 
         // Simula um cronômetro simples (usando Thread.Sleep)
         public static void questao56()
         {
+            Console.Write("\nDigite o tempo do cronômetro em segundos: ");
+            int tempo = int.Parse(Console.ReadLine());
+
+            for (int i = tempo; i >= 0; i--)
+            {
+                Console.Clear();
+                Console.WriteLine($"Tempo restante: {i} segundos");
+                Thread.Sleep(1000);
+            }
+            Console.WriteLine("\nTempo esgotado!");
         }
 
         // Calcula o número de palavras em uma string
         public static void questao57()
         {
+            
         }
 
         // Exibe uma mensagem personalizada com o método Falar() da classe Pessoa
@@ -70,8 +154,16 @@ namespace ProjetoQuestoesCSharp
         // Retorna a interseção entre dois arrays
         public static void questao59()
         {
+            Pessoa pessoa = new Pessoa();
+            pessoa.Falar();
         }
-
+        public class Pessoa
+        {
+            public void Falar()
+            {
+                Console.WriteLine("Olá! Eu sou Maria do Rosário.");
+            }
+        }
         // Converte uma string para maiúsculas e minúsculas alternadas
         public static void questao60()
         {
@@ -189,7 +281,21 @@ namespace ProjetoQuestoesCSharp
         // Gera uma senha aleatória com letras e números
         public static void questao72()
         {
+            Console.Write("\nDigite o comprimento da senha: ");
+            int comprimento = int.Parse(Console.ReadLine());
+            const string caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            StringBuilder senha = new StringBuilder(comprimento);
+            Random random = new Random();
+
+            for (int i = 0; i < comprimento; i++)
+            {
+                int index = random.Next(caracteres.Length);
+                senha.Append(caracteres[index]);
+            }
+
+            Console.WriteLine($"\nSenha gerada: {senha}");
         }
+    
 
         // Gera uma tabela de multiplicação
         public static void questao73()
@@ -239,10 +345,6 @@ namespace ProjetoQuestoesCSharp
                     i++;
                 }
             }
-            
-            
-                
-            
         }
     }
 }

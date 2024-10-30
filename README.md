@@ -39,3 +39,19 @@ boas-vindas.
 23. Crie uma função que retorna o último caractere de uma string fornecida.
 24. Implemente uma função que converte horas em segundos.
 25. Crie uma função que verifica se um número é divisível por 3 e por 5.
+
+Questões 26-50: Nível Intermediário
+26. Crie uma função que ordena três números fornecidos.
+27. Desenvolva um programa que calcula o fatorial de um número.
+28. Crie uma classe Aluno com propriedades Nome e Nota. Implemente um método para exibir
+esses valores.
+29. Implemente um método que calcula a média de uma lista de números.
+30. Crie um programa que verifica se uma palavra é um palíndromo.
+31. Implemente uma função que encontra o menor número em um array.
+32. Crie uma função que multiplica todos os elementos de um array por um valor fornecido.
+33. Desenvolva uma função que retorna a soma dos números ímpares em um array.
+34. Crie uma classe Carro com propriedades Marca e Ano.
+35. Implemente um método para verificar se um ano é bissexto.
+36. Crie uma função que exibe os 10 primeiros números da sequência de Fibonacci.
+37. Desenvolva um programa que recebe uma string e substitui todos os espaços por "_".
+38. Crie uma função que retorna o índice do maior elemento de um array.

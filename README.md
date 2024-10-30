@@ -11,6 +11,8 @@ Este projeto contém a resolução de várias questões de lógica e programaç�
 
 ## Questões Implementadas
 
+Questões 1-25: Nível Básico
+
 1. Crie uma classe Produto com propriedades Nome e Preco.
 2. Instancie um objeto da classe Produto e exiba seus valores.
 3. Crie um método que soma dois números inteiros e exibe o resultado.
@@ -40,6 +42,7 @@ boas-vindas.
 25. Crie uma função que verifica se um número é divisível por 3 e por 5.
 
 Questões 26-50: Nível Intermediário
+
 26. Crie uma função que ordena três números fornecidos.
 27. Desenvolva um programa que calcula o fatorial de um número.
 28. Crie uma classe Aluno com propriedades Nome e Nota. Implemente um método para exibir
@@ -67,7 +70,9 @@ cada valor.
 48. Desenvolva uma função que recebe uma data e exibe o dia da semana correspondente.
 49. Crie um programa que verifica se uma string contém apenas letras e números.
 50. Implemente uma função que calcula o valor de uma potência sem usar Math.Pow().
+
 Questões 51-75: Nível Intermediário-Avançado
+
 51. Crie uma função que verifica se uma matriz é simétrica.
 52. Desenvolva um programa que ordena uma lista de nomes em ordem alfabética.
 53. Crie uma função que encontra o elemento mais frequente em um array.
@@ -83,7 +88,6 @@ Questões 51-75: Nível Intermediário-Avançado
 63. Desenvolva uma função que verifica se um número é perfeito.
 64. Crie uma função que exibe os divisores de um número.
 65. Implemente um método para calcular a transposta de uma matriz.
-
 66. Crie um programa que exibe o horário atual continuamente (até ser encerrado).
 67. Desenvolva uma função que simula uma calculadora simples (+, -, *, /).
 68. Crie um programa que converte valores monetários para extenso.
@@ -95,7 +99,9 @@ ordem).
 73. Crie um programa que gera uma tabela de multiplicação.
 74. Desenvolva uma função que calcula a área de um triângulo com base em três lados.
 75. Crie uma função que gera números aleatórios únicos entre 1 e N.
+
 Questões 76-100: Nível Avançado
+
 76. Crie um jogo de "Adivinhe o Número" entre 1 e 100, dando dicas se o valor é maior ou menor.
 77. Implemente uma função que verifica se dois arrays possuem os mesmos elementos,
 independentemente da ordem.
@@ -118,7 +124,6 @@ bruto e desconto de 10%.
 considerando média &gt;= 7.
 90. Implemente uma função que soma todos os elementos de uma matriz 2x2.
 91. Crie um programa que simula uma votação com três candidatos e exibe o vencedor ao final.
-
 92. Desenvolva um programa que verifica se um número fornecido é múltiplo de 3 e 7 ao mesmo
 tempo.
 93. Implemente um programa que calcula a distância entre dois pontos no plano cartesiano

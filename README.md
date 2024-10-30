@@ -11,7 +11,6 @@ Este projeto contém a resolução de várias questões de lógica e programaç�
 
 ## Questões Implementadas
 
-Questões 1-25: Nível Básico
 1. Crie uma classe Produto com propriedades Nome e Preco.
 2. Instancie um objeto da classe Produto e exiba seus valores.
 3. Crie um método que soma dois números inteiros e exibe o resultado.
@@ -39,7 +38,6 @@ boas-vindas.
 23. Crie uma função que retorna o último caractere de uma string fornecida.
 24. Implemente uma função que converte horas em segundos.
 25. Crie uma função que verifica se um número é divisível por 3 e por 5.
-Questões 1-25: Nível Básico
 26. Crie uma função que ordena três números fornecidos.
 27. Desenvolva um programa que calcula o fatorial de um número.
 28. Crie uma classe Aluno com propriedades Nome e Nota. Implemente um método para exibir
